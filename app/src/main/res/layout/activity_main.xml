@@ -70,4 +70,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="46dp"
         android:layout_marginEnd="46dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proximity Alert"
+        android:id="@+id/btnProximityAlert"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp" />
 </RelativeLayout>

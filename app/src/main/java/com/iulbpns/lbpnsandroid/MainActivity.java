@@ -27,7 +27,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     EditText etEmail,etPassword;
-    Button btnLogin,btnRegister;
+    Button btnLogin,btnRegister,btnProximityAlert;
     List<NameValuePair> params;
 
     @Override
@@ -39,8 +39,17 @@ public class MainActivity extends Activity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button)findViewById(R.id.btnLogin);
         btnRegister = (Button) findViewById(R.id.btnRegister);
+        btnProximityAlert = (Button) findViewById(R.id.btnProximityAlert);
 
+        btnProximityAlert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ProximityActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        //Registration Button
         btnRegister.setOnClickListener(new View.OnClickListener() {
 
             @Override
