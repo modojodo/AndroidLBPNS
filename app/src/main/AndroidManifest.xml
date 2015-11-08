@@ -3,7 +3,6 @@
     package="com.iulbpns.lbpnsandroid" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
@@ -12,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".ShowNotification"
+            android:name=".GeofenceActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -28,14 +27,7 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".ProximityActivity">
-
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"  />
-
-            </intent-filter>
-        </activity>
-        <receiver android:name="ProximityReceiver">
+        <receiver android:name="GeofenceReceiver" >
             <intent-filter>
                 <action android:name="com.iulbpns.lbpnsandroid"/>
             </intent-filter>
