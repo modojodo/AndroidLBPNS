@@ -7,16 +7,24 @@
         android:layout_height="wrap_content"
         android:text="Show Notification"
         android:id="@+id/btnNotify"
+        android:layout_marginTop="77dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="174dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Proximity Alert for KFC"
         android:id="@+id/btnProximity"
-        android:layout_below="@+id/btnNotify"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Proximity Alert for KFC"
+        android:id="@+id/btnRemoveProximity"
+        android:layout_marginTop="52dp"
+        android:layout_below="@+id/btnProximity"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

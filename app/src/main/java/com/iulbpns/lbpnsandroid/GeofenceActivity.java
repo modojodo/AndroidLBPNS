@@ -27,9 +27,10 @@ public class GeofenceActivity extends Activity{
     private static final double LATITUDE = 25.020588;
     private static final double LONGITUDE = 67.132638;
     private static final float RADIUS = 10;
+    private static final int requestCode = 101;
     private static final long EXPIRATION_TIME = -1;
 
-    Button btnProximity,bNotify;
+    Button btnProximity,btnRemoveProximity,bNotify;
     NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
 
@@ -38,6 +39,7 @@ public class GeofenceActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_notification);
 
+// Show Notification Button Functionality
         bNotify  = (Button) findViewById(R.id.btnNotify);
         bNotify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,7 @@ public class GeofenceActivity extends Activity{
                 builder.setContentText("Mighty zinger, regular fries &");
                 builder.setSubText("300 ml drink at Rs.580");
                 builder.setContentIntent(pendingIntent);
+                builder.setWhen(System.currentTimeMillis());
                 builder.setAutoCancel(true);
 
                 //builder.build();
@@ -74,21 +77,41 @@ public class GeofenceActivity extends Activity{
             }
         });
 
+//Adding Proximity Alert
         btnProximity  = (Button) findViewById(R.id.btnProximity);
         btnProximity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Welcome to my Area", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(), "You have entered the Geofence", Toast.LENGTH_LONG).show();
 
                 LocationManager lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 Intent intent = new Intent("com.iulbpns.lbpnsandroid");
 
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),-1,intent,0);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),requestCode,intent,0);
 
                 if(lManager != null){
                     if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                         lManager.addProximityAlert(LATITUDE,LONGITUDE, RADIUS, EXPIRATION_TIME, pendingIntent);
-                    }                }
+                            Toast.makeText(getApplicationContext(), "Proximity Alert Added!", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
+        });
+
+//Removing Proximity Alert
+        btnRemoveProximity = (Button) findViewById(R.id.btnRemoveProximity);
+        btnRemoveProximity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocationManager lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                Intent intent = new Intent("com.iulbpns.lbpnsandroid");
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),requestCode,intent,0);
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    lManager.removeProximityAlert(pendingIntent);
+                    Toast.makeText(getApplicationContext(), "Proximity Alert Removed!", Toast.LENGTH_LONG).show();
+
+                }
             }
         });
     }
