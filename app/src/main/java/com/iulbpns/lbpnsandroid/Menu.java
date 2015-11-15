@@ -1,7 +1,10 @@
 package com.iulbpns.lbpnsandroid;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
@@ -11,7 +14,7 @@ import android.widget.ListView;
 /**
  * Created by Asad 15R on 11/3/2015.
  */
-public class Menu extends Activity {
+public class Menu extends Activity{
 
    // String restaurants[];
     @Override
@@ -25,4 +28,6 @@ public class Menu extends Activity {
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adpt);
     }
+
+
 }
