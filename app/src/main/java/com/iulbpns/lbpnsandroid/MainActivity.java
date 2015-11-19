@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
                         String jsonLogin = json.getString("res");
 
                         if(jsonLogin=="true") {
-                                    Intent op = new Intent(MainActivity.this, Options.class);
+                                    Intent op = new Intent(MainActivity.this, MenuSelection.class);
                                     startActivity(op);
                                 }
                         Toast.makeText(getApplication(),jsonstr,Toast.LENGTH_LONG).show();

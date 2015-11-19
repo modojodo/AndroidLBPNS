@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,10 +31,12 @@ public class RestaurantFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_restaurant,container,false);
 
 
-        expListView = (ExpandableListView) rootView.findViewById(R.id.lvExp);
+        expListView = (ExpandableListView) rootView.findViewById(R.id.lvExpanded);
 
-        // preparing list data
-        prepareListData();
+
+
+        // prepare list data
+        constructData();
 
         listAdapter = new ExpandableListAdapter(getActivity(), listDataHeader, listDataChild);
 
@@ -43,7 +46,7 @@ public class RestaurantFragment extends Fragment {
         return rootView;
     }
 
-    private void prepareListData() {
+    private void constructData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 
