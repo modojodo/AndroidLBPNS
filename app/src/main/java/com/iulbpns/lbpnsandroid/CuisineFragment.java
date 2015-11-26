@@ -56,14 +56,14 @@ public class CuisineFragment extends Fragment {
         // Adding child data
         List<String> burger = new ArrayList<String>();
         burger.add("KFC");
-        burger.add("Burger King");
+        burger.add("McDonalds");
 
         List<String> pizza = new ArrayList<String>();
-        pizza.add("Pizza Hut");
+        pizza.add("Pizza Point");
 
         List<String> sandwich = new ArrayList<String>();
         sandwich.add("KFC");
-        sandwich.add("Burger King");
+        sandwich.add("McDonalds");
 
         listDataChild.put(listDataHeader.get(0), burger); // Header, Child data
         listDataChild.put(listDataHeader.get(1), pizza);

@@ -52,8 +52,8 @@ public class RestaurantFragment extends Fragment {
 
         // Adding child data
         listDataHeader.add("KFC");
-        listDataHeader.add("Pizza Hut");
-        listDataHeader.add("Burger King");
+        listDataHeader.add("Pizza Point");
+        listDataHeader.add("McDonalds");
 
         // Adding child data
         List<String> kfc = new ArrayList<String>();
@@ -63,22 +63,22 @@ public class RestaurantFragment extends Fragment {
         kfc.add("Fajita Roll");
 
 
-        List<String> pizzahut = new ArrayList<String>();
-        pizzahut.add("Chicken Tikka");
-        pizzahut.add("Fajita");
-        pizzahut.add("Afghani Tikka");
-        pizzahut.add("Garlic Bread");
+        List<String> pizzapoint = new ArrayList<String>();
+        pizzapoint.add("Chicken Tikka");
+        pizzapoint.add("Fajita");
+        pizzapoint.add("Afghani Tikka");
+        pizzapoint.add("Garlic Bread");
 
 
-        List<String> bk = new ArrayList<String>();
-        bk.add("Chicken Burger");
-        bk.add("Jumbo Zinger");
-        bk.add("Club Sandwich");
-        bk.add("Beef Burger");
+        List<String> md = new ArrayList<String>();
+        md.add("Chicken Burger");
+        md.add("Jumbo Zinger");
+        md.add("Club Sandwich");
+        md.add("Beef Burger");
 
 
         listDataChild.put(listDataHeader.get(0), kfc); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), pizzahut);
-        listDataChild.put(listDataHeader.get(2), bk);
+        listDataChild.put(listDataHeader.get(1), pizzapoint);
+        listDataChild.put(listDataHeader.get(2), md);
     }
 }
